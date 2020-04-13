@@ -18,6 +18,22 @@ int simulation(){
     while(hostDoor == chosenDoor){
         hostDoor = rand() % 3;
     }
+    if((hostDoor == 0 and chosenDoor == 1) or (hostDoor == 1 and chosenDoor == 0)){
+        chosenDoor = 2;
+    }
+    else if((hostDoor == 0 and chosenDoor == 2) or (hostDoor == 2 and chosenDoor == 0)){
+        chosenDoor = 1;
+    }
+    else{
+        chosenDoor = 0;
+    }
+
+    if(chosenDoor == carDoor){
+        return 1;
+    }
+    else{
+        return 0;
+    }
 }
 
 int main (int argc, char** argv){
