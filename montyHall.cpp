@@ -10,7 +10,7 @@ int simulation(){
         doors[i] = false;
     }
     int carDoor = rand() % 3;
-    doors[cardDoor] = true;
+    doors[carDoor] = true;
     
     int chosenDoor = rand() % 3;
 
@@ -46,7 +46,7 @@ int main (int argc, char** argv){
         return -1;
     }
 
-    int iterations = atoi(argv[1])
+    int iterations = atoi(argv[1]);
     
     for(int i = 0; i < iterations; i++){
         if(simulation()){
