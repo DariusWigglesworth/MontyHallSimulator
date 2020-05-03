@@ -53,6 +53,6 @@ int main (int argc, char** argv){
             correctDoor++;
         }
     }
-    cout << "The correct door was picked " << correctDoor/iterations << " times" << endl;
+    cout << "The correct door was picked " << 100.0 * correctDoor/iterations << "% of the time" << endl;
     return 0;
 }
