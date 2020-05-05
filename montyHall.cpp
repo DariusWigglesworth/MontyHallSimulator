@@ -11,13 +11,30 @@ int simulation(){
     }
     int carDoor = rand() % 3;
     doors[carDoor] = true;
-    
-    int chosenDoor = rand() % 3;
 
-    int hostDoor = rand() % 3;
-    while(hostDoor == chosenDoor){
-        hostDoor = rand() % 3;
+    
+    //for(int i = 0; i < 3; i++){
+    //    cout << "Door is " << doors[i] << endl;
+    //}
+
+    int chosenDoor = rand() % 3;
+    //cout << "Chose door is " << chosenDoor << endl;
+
+    int hostDoor = -1;
+    if((chosenDoor == 0 and carDoor == 1) or (chosenDoor == 1 and carDoor == 0)){
+        hostDoor = 2;
     }
+
+    else if((chosenDoor == 0 and carDoor == 2) or (chosenDoor == 2 and carDoor == 0)){
+        hostDoor = 1;
+    }
+
+    else{
+        hostDoor = 0;
+    }
+
+    //cout << "Host door is " << hostDoor << endl;
+
     if((hostDoor == 0 and chosenDoor == 1) or (hostDoor == 1 and chosenDoor == 0)){
         chosenDoor = 2;
     }
@@ -27,11 +44,15 @@ int simulation(){
     else{
         chosenDoor = 0;
     }
-
+    
+    //cout << "Chosen Door changed to " << chosenDoor << endl;
+    
     if(chosenDoor == carDoor){
+        //cout << "correct door was chosen\n\n" << endl;
         return 1;
     }
     else{
+        //cout << "correct door was NOT chosen\n\n" << endl;
         return 0;
     }
 }
